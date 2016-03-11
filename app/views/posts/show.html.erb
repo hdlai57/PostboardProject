@@ -1,0 +1,25 @@
+<h1>Posts#show</h1>
+<p>Find me in app/views/posts/show.html.erb</p>
+
+
+<h2><%= @post.title %></h2>
+<p>
+	<%=  @post.content%>
+</p>
+<br>
+
+<small>post by </small><%= "#{@post.user.name}" %>
+
+
+<h4>Comments of <%= @post.title %> </h4>
+
+<% @post.comments.each do |comment| %>
+	<p>
+		<%= comment.content %>
+	</p>
+	<small>commented by <%= "#{comment.user.name}"%> </small>
+<% end %>
+
+<br>
+<br>
+<%= link_to "Back to Main page", posts_path %>
