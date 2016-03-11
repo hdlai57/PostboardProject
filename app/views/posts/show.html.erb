@@ -1,25 +1,34 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<!-- <h1>Posts#show</h1>
+<p>Find me in app/views/posts/show.html.erb</p> -->
+
+<%= render 'shared/title', title: 'Show Post' %>
 
 
-<h2><%= @post.title %></h2>
-<p>
-	<%=  @post.content%>
-</p>
-<br>
+<div class="row">
+	<div class="well col-md-8 well">
+		<h2><%= @post.title %></h2>
+		<p>
+			<%=  @post.content%>
+		</p>
+		<br>
+		<small>post by </small><%= "#{@post.user.name}" %>
+	</div>
+</div>
 
-<small>post by </small><%= "#{@post.user.name}" %>
 
 
 <h4>Comments of <%= @post.title %> </h4>
 
 <% @post.comments.each do |comment| %>
-	<p>
-		<%= comment.content %>
-	</p>
-	<small>commented by <%= "#{comment.user.name}"%> </small>
+	<div class="col-md-6 well">
+		<p>
+			<%= comment.content %>
+		</p>
+		<small>commented by <%= "#{comment.user.name}"%> </small>
+	</div>
 <% end %>
 
 <br>
-<br>
-<%= link_to "Back to Main page", posts_path %>
+<div class="row">
+	<%= link_to "Back to Main page", posts_path %>
+</div>
