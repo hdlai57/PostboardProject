@@ -15,17 +15,30 @@
 	</div>
 </div>
 
-
-
-<h4>Comments of <%= @post.title %> </h4>
-
-<% @post.comments.each do |comment| %>
-	<div class="col-md-6 well">
-		<p>
-			<%= comment.content %>
-		</p>
-		<small>commented by <%= "#{comment.user.name}"%> </small>
+<% if @post.comments.count > 0 %>
+	<h4>Comments of <%= @post.title %>: </h4>
+	<div class="row">
+		<% @post.comments.each do |comment| %>
+			<div class='well col-md-8'>
+				<h5><b><%= "#{comment.user.name}" %></b> says:</h5>
+				<pre><i><%= comment.content %></i></pre>
+				<%= "at #{comment.created_at.to_time}: " %>
+			</div>
+		<% end %>	
 	</div>
+<% end %>
+
+<% if logged_in? %>
+	<h4>Leave a comment: </h4>
+	<%= form_for [@post, @comment] do |f| %>
+		<div class='row'>
+			<%= f.text_area :content, class: 'col-md-4' %>
+			<div class='col-md-8'>
+				<%= f.submit 'Create Comment', class: 'btn btn-primary' %>
+			</div>
+		</div>
+		<br>
+	<% end %>
 <% end %>
 
 <br>
