@@ -16,9 +16,8 @@ class PostsController < ApplicationController
   def create
     post = Post.new(post_params)
     # add code to identify admin-user
-    post.user = User.first
+    post.user = current_user
     binding.pry
-    
     if post.save!
       redirect_to posts_path
     else 

@@ -6,4 +6,5 @@ class Post < ActiveRecord::Base
   has_many :categories, through: :categories_posts
 
   validates :content, presence: true, length: {minimum: 10}
+  validates :title, presence: true, length: {minimum: 2}
 end
