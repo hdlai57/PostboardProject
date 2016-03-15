@@ -4,6 +4,9 @@
     <div class="navbar-header">
       <%= link_to "Hal's PostBoard", root_path, :class => 'navbar-brand' %>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><%= link_to "View Categories", categories_path %></li>
+    </ul>
 
     <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>

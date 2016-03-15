@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="well col-md-6">
+		<h3><%= post.title %></h3>
+		<hr>
+		<p><%= post.content %></p>
+		<span>
+			<%= link_to "(read the post... )", post_path(post) %>
+		</span>
+		<br>
+		<br>
+		<small>posted by </small> <%= "#{post.user.name}" %>
+		<hr>
+		<%= render 'categories/categories', categories: post.categories%>
+	</div>
+</div>
