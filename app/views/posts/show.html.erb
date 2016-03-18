@@ -7,12 +7,16 @@
 		<hr>
 		<%= render 'categories/categories', categories: @post.categories%>
 	</div>
+
+<% if current_user == @post.user %>
 	<span class="btn btn-default btn-sm">
 		<%= link_to "Edit", edit_post_path(@post) %>
 	</span>
 	<span class="btn btn-default btn-sm">
 		<%= link_to "Delete", post_path(@post), method: :delete, :data => {:confirm => 'Are you sure to delete the post?'} %>
 	</span>
+<% end %>
+
 </div>
 <%= render 'comments', post: @post %>
 <br>
