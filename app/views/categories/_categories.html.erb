@@ -13,5 +13,7 @@
 		<% else %>
 			<span class="btn btn-default btn-sm">
 		<% end%>
-		<%= category.name %></span>
+		<%= link_to "#{category.name}", category_path(category), {:style=>'color:#FFFFFF;', :class => "css_class"} %>
+		<%#= category.name %>
+	</span>
 <% end %>

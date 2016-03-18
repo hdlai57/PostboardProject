@@ -1,13 +1,4 @@
-<%= render 'shared/title', title: @post.title.upcase %>
-<div class="row">
-	<div class="well col-md-8">
-		<p><%= simple_format(@post.content) %></p><br /><br />	
-		<hr>
-		<h5>Posted by <%= "#{@post.user.name}" %></h5>
-		<hr>
-		<%= render 'categories/categories', categories: @post.categories%>
-	</div>
-
+<%#= render 'shared/title', title: @post.title.upcase %>
 <% if current_user == @post.user %>
 	<span class="btn btn-default btn-sm">
 		<%= link_to "Edit", edit_post_path(@post) %>
@@ -16,8 +7,7 @@
 		<%= link_to "Delete", post_path(@post), method: :delete, :data => {:confirm => 'Are you sure to delete the post?'} %>
 	</span>
 <% end %>
-
-</div>
+<%= render 'post', post: @post %>
 <%= render 'comments', post: @post %>
 <br>
 <div class="row">

@@ -1,16 +1,4 @@
 <%= render 'shared/title', title: 'Post List' %>
 <% @posts.each do |post| %>
-	<div class="row">
-		<div class="well col-md-8">
-			<h3><%= post.title %></h3>			
-			<span>
-				<%= link_to "(Read post... )", post_path(post) %>
-			</span>
-			<br>
-			<br>
-			<small>Posted by </small> <%= "#{post.user.name}" %>
-			<hr>
-			<%= render 'categories/categories', categories: post.categories%>
-		</div>
-	</div>
+	<%= render 'post', post: post %>
 <% end %>

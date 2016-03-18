@@ -1,6 +1,6 @@
 <%= render 'shared/title', title: 'Category List' %>
 <% if logged_in? %>
-	<div><%= link_to "Add New Category", new_category_path %></div>
+	<li><%= link_to "Add New Category", new_category_path %></li>
 <% end %>
 <hr>
 <%= render 'categories', categories: @categories %>
