@@ -1,35 +1,8 @@
-<!-- <h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p> -->
-
 <%= render 'shared/title', title: 'New Post' %>
-
-<div class="well col-md-8">
-	<%= form_for @post do |f| %>
-		<div class="form-group">
-			<%= f.label :title %>
-			<br>
-			<%= f.text_field :title, size: "80" %>
-			<br>
-		</div>
-		<div class="form-group">
-			<%= f.label :content %>
-			<br>
-			<%= f.text_area :content, size: "80x15" %> 
-		</div>
-		<br>
-		<div class="form-group">
-			<%= f.label :categories %>
-			<br>
-			<%= collection_check_boxes(:post, :category_ids, Category.all, :id, :name) do |cbox| %>
-				<%= cbox.label(class: "checkbox-inline") { cbox.check_box(class: "checkbox") + cbox.text} %>
-			<% end %>			
-		</div>
-		<br>
-		<%= f.submit(@post.new_record? ? "Create Post" : "Update Post", class: 'btn btn-primary') %>
-	<% end %>
+<div class="row">
+	<%= render 'postform', post: @post %>
 </div>
-
 <br>
-<%= link_to "Back to Main page", posts_path %>
-<br>
-<br>
+<div class="row">
+	<span><%= link_to "Back to Main page", posts_path %></span>
+</div>

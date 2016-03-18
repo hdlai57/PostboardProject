@@ -7,6 +7,30 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments
+    
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    # binding.pry
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy 
+      redirect_to root_path
+    else
+      redirect_to @post
+    end
   end
 
   def new

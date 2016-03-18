@@ -1,11 +1,20 @@
-<!-- <h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p> -->
-
 <%= render 'shared/title', title: @post.title.upcase %>
-<%= render 'post', post: @post %>
+<div class="row">
+	<div class="well col-md-8">
+		<p><%= simple_format(@post.content) %></p><br /><br />	
+		<hr>
+		<h5>Posted by <%= "#{@post.user.name}" %></h5>
+		<hr>
+		<%= render 'categories/categories', categories: @post.categories%>
+	</div>
+	<span class="btn btn-default btn-sm">
+		<%= link_to "Edit", edit_post_path(@post) %>
+	</span>
+	<span class="btn btn-default btn-sm">
+		<%= link_to "Delete", post_path(@post), method: :delete, :data => {:confirm => 'Are you sure to delete the post?'} %>
+	</span>
+</div>
 <%= render 'comments', post: @post %>
-
-
 <br>
 <div class="row">
 	<%= link_to "Back to Main page", posts_path %>

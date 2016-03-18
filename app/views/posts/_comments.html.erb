@@ -4,13 +4,12 @@
 		<% post.comments.each do |comment| %>
 			<div class='well col-md-8'>
 				<h5><b><%= "#{comment.user.name}" %></b> says:</h5>
-				<pre><i><%= comment.content %></i></pre>
+				<pre><i><%= simple_format(comment.content) %></i></pre>
 				<%= "at #{comment.created_at.to_time}: " %>
 			</div>
 		<% end %>	
 	</div>
 <% end %>
-
 <% if logged_in? %>
 	<h4>Leave a comment: </h4>
 	<%= form_for [post, @comment] do |f| %>
