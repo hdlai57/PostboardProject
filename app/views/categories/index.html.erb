@@ -1,3 +1,8 @@
 <%= render 'shared/title', title: 'Category List' %>
+<% if logged_in? %>
+	<div><%= link_to "Add New Category", new_category_path %></div>
+<% end %>
+<hr>
 <%= render 'categories', categories: @categories %>
+<hr>
 <h5>Click tags to view associated posts...</h5>
