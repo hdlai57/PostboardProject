@@ -1,14 +1,15 @@
 <% if post.comments.count > 0 %>
-	<h4>Comments of <%= post.title %>: </h4>
-	<div class="row">
+	<h3>Comments of <u><%= post.title %></u>: </h3>	
 		<% post.comments.each do |comment| %>
-			<div class='well col-md-8'>
-				<h5><b><%= "#{comment.user.name}" %></b> says:</h5>
-				<pre><i><%= simple_format(comment.content) %></i></pre>
-				<%= "at #{comment.created_at.to_time}: " %>
+		<div class="row" style="margin-left: 20px">
+				<div class='well col-md-6'>
+					<h5><b><%= "#{comment.user.name}" %></b> says:</h5>
+					<pre><i><%= simple_format(comment.content) %></i></pre>
+					<%= "at #{comment.created_at.to_time}: " %>
+				</div>
 			</div>
 		<% end %>	
-	</div>
+
 <% end %>
 <% if logged_in? %>
 	<h4>Leave a comment: </h4>

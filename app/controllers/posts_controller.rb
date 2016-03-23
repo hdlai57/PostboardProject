@@ -50,6 +50,9 @@ class PostsController < ApplicationController
 
   end
 
+  def readme
+  end
+
 
   private
 

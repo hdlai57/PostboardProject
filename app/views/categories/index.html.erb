@@ -1,8 +1,26 @@
 <%= render 'shared/title', title: 'Category List' %>
-<% if logged_in? %>
-	<li><%= link_to "Add New Category", new_category_path %></li>
-<% end %>
-<hr>
 <%= render 'categories', categories: @categories %>
-<hr>
-<h5>Click tags to view associated posts...</h5>
+<br><br>
+<% if logged_in? %>
+	<div class="row" style="margin-left: 20px">
+		<div class="well col-md-3">
+			<span><%= link_to "Add New Category", new_category_path %></span>
+		</div>
+	</div>
+<% end %>
+<ul>
+	<li style="color: brown">Below shows the number of posts.</li>
+	<li style="color: brown">Click a tag to view associated posts, same function as above buttons.</li>
+</ul>
+<div class="row" style="margin-left: 20px">
+	<div class="well col-md-3">
+		<ul class="list-group">
+			<% @categories.each do |category| %>
+			  <li class="list-group-item">
+			    <span class="badge"><%= category.posts.count %></span>
+			    <%= link_to "#{category.name}", category_path(category) %>
+		  </li>
+		  <% end %>
+		</ul>
+	</div>
+</div>
