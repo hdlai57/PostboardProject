@@ -1,4 +1,4 @@
 <%= render 'shared/title', title: 'Post List' %>
-<% @posts.each do |post| %>
+<% @posts.reverse_each do |post| %>
 	<%= render 'post', post: post %>
 <% end %>

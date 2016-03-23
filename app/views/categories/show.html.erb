@@ -1,4 +1,4 @@
-<%= render 'shared/title', title: 'Posts of category - "' + @category.name + '"' %>
+<%= render 'shared/title', title: 'Posts about "' + @category.name + '"' %>
 <span class="btn btn-default btn-large"><%= link_to "Back", categories_path %></span>
 <br><br>
 <% @category.posts.each do |post| %>
