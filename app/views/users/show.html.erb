@@ -1,0 +1,6 @@
+<%= render 'shared/title', title: "Welcome back, #{@user.name}!" %>
+<h2>Your posts</h2>
+<hr>
+<% @user.posts.each do |post| %>
+	<%= render 'posts/post', post: post %>
+<% end %>
