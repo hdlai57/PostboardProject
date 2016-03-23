@@ -17,7 +17,7 @@
         <li><%= link_to "New Post", new_post_path %></li>
         <li class="dropdown">
           <%= link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do %>
-            <%= "Welcom #{current_user.name} !" %> <span class='caret'></span>
+            <%= "Welcome #{current_user.name} !" %> <span class='caret'></span>
           <% end %>
           <ul class="dropdown-menu">
             <li><%= link_to 'My Profile', user_path(current_user) %></li>

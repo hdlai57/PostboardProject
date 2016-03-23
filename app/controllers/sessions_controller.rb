@@ -10,16 +10,18 @@ class SessionsController < ApplicationController
     # binding.pry
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      # flash[:notice] = "You've logged in!"
-      redirect_to root_path
+      redirect_to root_path, notice: "Hello, #{current_user.name}!"
+    elsif !user
+      redirect_to login_path, notice: "Username does not exist, please try again."
     else
-      redirect_to login_path
+      redirect_to login_path, notice: "Invalid password, please try again."
     end
   end
 
   def destroy
     #登出畫面使用，刪除 session hash 裡面的 user_id
+    redirect_to root_path, notice: "Bye #{current_user.name}, see you next time!"
     session[:user_id] = nil
-    redirect_to root_path
+    
   end
 end

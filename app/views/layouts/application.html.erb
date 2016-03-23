@@ -11,6 +11,11 @@
 	<header>
 		<%= render 'layouts/navigation' %>
 	</header>
+	<% flash.each do |name, msg| %>
+  	<div class="alert alert-info" role="alert">
+    	<p><%= content_tag :div, msg, class: name %></p>
+  	</div>
+  <% end %>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
