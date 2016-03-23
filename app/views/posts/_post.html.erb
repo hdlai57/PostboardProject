@@ -1,3 +1,11 @@
+<% if current_user == post.user %>
+	<span class="btn btn-default btn-sm">
+		<%= link_to "Edit", edit_post_path(post) %>
+	</span>
+	<span class="btn btn-default btn-sm">
+		<%= link_to "Delete", post_path(post), method: :delete, :data => {:confirm => 'Are you sure to delete the post?'} %>
+	</span>
+<% end %>
 <div class="row">
 	<div class="well col-md-8" style="background-color: transparent; border-style: dotted; border-width: 3px; border-color: #69965F;">
 		<h3><%= link_to post.title, post_path(post) %></h3>			
