@@ -4,14 +4,12 @@ Upload to Heroku
 
 https://quiet-coast-35354.herokuapp.com/
 
+Visitor has read-only permission.
 
-<ol>
-  <li>Visitor has read-only permission.</li>
-	<li>Logged in user can create post / leave comment / add category.</li>
-	<li>Only the poster can update / delete post.</li>
-	<li>Added favicon in browser tab.</li> 
-	<li>Added flash notice for incorrect username/password message.</li>
-	<li>Fixed navbar on top / Fixed footer on bottom.</li>
-	<li>Posts are shown in descent order.</li>
-</ol>
+1. Logged in user can create post / leave comment / add category.
+2. Only the poster can update / delete post.
+3. Added favicon in browser tab.
+4. Added flash notice for incorrect username/password message.
+5. Fixed navbar on top / Fixed footer on bottom.
+6. Posts are shown in descent order.
 
