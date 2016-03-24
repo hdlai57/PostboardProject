@@ -1,28 +1,15 @@
-== README
+Final project of NTU-ROR-266
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Upload to Heroku
+```
+[a link](https://quiet-coast-35354.herokuapp.com/)
+```
 
-Things you may want to cover:
+Visitor has read-only permission.
+Logged in user can create post / leave comment / add category.
+Only the poster can update / delete post.
+Favicon in browser tab.
+Flash notice for incorrect username/password message.
+Fixed navbar on top / Fixed footer on bottom.
+Posts are shown in descent order.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
