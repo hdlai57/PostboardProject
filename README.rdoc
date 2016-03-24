@@ -1,15 +1,17 @@
 Final project of NTU-ROR-266
 
 Upload to Heroku
-```
-[a link](https://quiet-coast-35354.herokuapp.com/)
-```
 
-Visitor has read-only permission.
-Logged in user can create post / leave comment / add category.
-Only the poster can update / delete post.
-Favicon in browser tab.
-Flash notice for incorrect username/password message.
-Fixed navbar on top / Fixed footer on bottom.
-Posts are shown in descent order.
+https://quiet-coast-35354.herokuapp.com/
+
+
+<ol>
+  <li>Visitor has read-only permission.</li>
+	<li>Logged in user can create post / leave comment / add category.</li>
+	<li>Only the poster can update / delete post.</li>
+	<li>Added favicon in browser tab.</li> 
+	<li>Added flash notice for incorrect username/password message.</li>
+	<li>Fixed navbar on top / Fixed footer on bottom.</li>
+	<li>Posts are shown in descent order.</li>
+</ol>
 
