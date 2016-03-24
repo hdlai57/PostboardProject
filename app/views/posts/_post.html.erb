@@ -8,11 +8,10 @@
 <% end %>
 <div class="row">
 	<div class="well col-md-8" style="background-color: transparent; border-style: dotted; border-width: 3px; border-color: #69965F;">
-		<h3><%= link_to post.title, post_path(post) %></h3>			
-		<p><%= simple_format(post.content) %></p><br /><br />	
+		<h3><%= link_to post.title, post_path(post) %></h3>
+		<h5><i><b><span style="color: #787785"><%= post.created_at.strftime("Posted %b %d, %Y by ") %></span><span style="color: #e31e50; font-size: 16px"><%= post.user.name %></span> </b></i></h5>
 		<hr>
-		<h5>Posted by <%= "#{post.user.name}" %></h5>
-		<hr>
+		<p><%= simple_format(post.content) %></p><br>
 		<%= render 'categories/categories', categories: post.categories%>
 	</div>
 </div>

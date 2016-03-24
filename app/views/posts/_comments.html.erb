@@ -1,8 +1,8 @@
 <% if post.comments.count > 0 %>
-	<h3>Comments of <u><%= post.title %></u>: </h3>	
+	<h3>Comments:</h3>	
 		<% post.comments.each do |comment| %>
 		<div class="row" style="margin-left: 20px">
-				<div class='well col-md-6'>
+				<div class='well col-md-6' style="background-color: rgba(205, 243, 159, 0.5)">
 					<h5><b><%= "#{comment.user.name}" %></b> says:</h5>
 					<pre><i><%= simple_format(comment.content) %></i></pre>
 					<%= "at #{comment.created_at.to_time}: " %>
