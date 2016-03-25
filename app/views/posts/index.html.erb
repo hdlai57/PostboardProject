@@ -1,5 +1,5 @@
 <%= render 'shared/title', title: 'Post List' %>
-<% @posts.reverse_each do |post| %>
+<% @posts.order(:created_at).reverse_each do |post| %>
 	<% if post.visible == true || post.user == current_user || is_admin? %>
 		<%= render 'post', post: post %>
 	<% end %>
