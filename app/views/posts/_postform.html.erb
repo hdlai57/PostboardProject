@@ -19,6 +19,10 @@
 				<%= cbox.label(class: "checkbox-inline") { cbox.check_box(class: "checkbox") + cbox.text} %>
 			<% end %>			
 		</div>
+		<div class="form-group">
+			<%= f.label :visible %>
+			<%= f.check_box :visible, {:checked => "checked"}  %>
+		</div>
 		<br>
 		<%= f.submit(post.new_record? ? "Create Post" : "Update Post", class: 'btn btn-primary') %>
 		<%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>

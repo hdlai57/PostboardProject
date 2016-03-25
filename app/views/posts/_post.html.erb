@@ -1,4 +1,4 @@
-<% if current_user == post.user %>
+<% if current_user == post.user || is_admin? %>
 	<span class="btn btn-default btn-sm">
 		<%= link_to "Edit", edit_post_path(post) %>
 	</span>
@@ -9,6 +9,9 @@
 <div class="row">
 	<div class="well col-md-8" style="background-color: transparent; border-style: dotted; border-width: 3px; border-color: #69965F;">
 		<h3><%= link_to post.title, post_path(post) %></h3>
+		<% if post.visible == false %>
+			<p style="color: #FF8D00"># this post is invisible #</p>
+		<% end%>
 		<h5><i><b><span style="color: #787785"><%= post.created_at.strftime("Posted %b %d, %Y by ") %></span><span style="color: #e31e50; font-size: 16px"><%= post.user.name %></span> </b></i></h5>
 		<hr>
 		<p><%= simple_format(post.content) %></p><br>
