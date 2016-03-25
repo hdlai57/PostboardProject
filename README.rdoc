@@ -9,3 +9,5 @@ Upload to Heroku:  https://quiet-coast-35354.herokuapp.com/
 5. Added flash notice for incorrect username/password message.
 6. Fixed navbar on top / Fixed footer on bottom.
 7. Posts are shown in descent order.
+8. Posts can be set as visible / invisible.
+9. Admin user can manage all posts.
